@@ -10,8 +10,9 @@ public class Main {
             conex.createStatement("SELECT MD5 FROM TGFPAF\n" +
                     "WHERE NOMEAPLICATIVO = ?\n" +
                     "AND VERSAO = ?\n" +
-                    "AND NUMEND = ?");
-            conex.addParametro("FAST SERVICE", "4.6.0.7", 369);
+                    "AND NUMEND = ?\n" +
+                    "AND NUMEND <> ?");
+            conex.addParametro("FAST SERVICE", "4.6.0.7", 369, 4.55555654);
             conex.createSet();
             conex.rs.next();
             System.out.print(conex.rs.getString(1));

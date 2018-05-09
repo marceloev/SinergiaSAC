@@ -28,10 +28,14 @@ public class Conexao {
     }
 
     public void addParametro(Object... objects) throws Exception {
-        for (Object object : objects) {
-            this.getPst().setObject(index, object);
-            this.index++;
-        }
+        for (Object object : objects) addParametro(object);
+    }
+
+    private void addParametro(Object object) throws Exception {
+        GravaLog.send(LogType.INFO, getInvocador(),
+                String.format("%dº Parâmetro(%s): %s", index, object.getClass().getName(), object.toString()));
+        this.getPst().setObject(index, object);
+        this.index++;
     }
 
     public void createSet() throws Exception {
