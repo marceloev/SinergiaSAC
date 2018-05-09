@@ -23,7 +23,8 @@ public class ModelConnection {
                 propies.getMapProperties().get("xService"));
     }
 
-    public Connection getConnection() {
+    public Connection getConnection() throws Exception {
+        if (connection.isClosed()) this.setConnection(DriverManager.getConnection(getDBConnURL(), propies));
         return connection;
     }
 

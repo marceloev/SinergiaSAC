@@ -42,6 +42,14 @@ public class Conexao {
         this.setRs(this.getPst().executeQuery());
     }
 
+    public void desconecta() {
+        try {
+            this.modelConnection.getConnection().close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
     public PreparedStatement getPst() {
         return pst;
     }

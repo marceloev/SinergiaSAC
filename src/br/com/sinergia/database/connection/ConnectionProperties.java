@@ -11,6 +11,7 @@ public class ConnectionProperties extends Properties {
     public ConnectionProperties() {
         getMapProperties().put("user", "hdesnk03");
         getMapProperties().put("password", "tecsis");
+        getMapProperties().put("v$session.program", "Sinergia");
         getMapProperties().put("xIP", "192.168.0.170");
         getMapProperties().put("xPort", "1521");
         getMapProperties().put("xService", "ORCL");
@@ -20,9 +21,5 @@ public class ConnectionProperties extends Properties {
 
     public Map<String, String> getMapProperties() {
         return mapProperties;
-    }
-
-    public void setMapProperties(Map<String, String> mapProperties) {
-        this.mapProperties = mapProperties;
     }
 }
